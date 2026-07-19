@@ -34,7 +34,6 @@ curl -fsSL --max-time 60 \
 https://raw.githubusercontent.com/bibicadotnet/blocklist_minimal/main/blocklists.txt \
 https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt \
 https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts \
-https://raw.githubusercontent.com/abpvn/abpvn/refs/heads/master/filter/abpvn.txt \
 | extract_domains > "$BLOCK_TMP"
 
 echo "Downloading and processing allowlists..."
