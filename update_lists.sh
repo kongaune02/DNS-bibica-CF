@@ -32,11 +32,15 @@ extract_domains() {
 echo "Downloading and processing blocklists..."
 curl -fsSL --max-time 60 \
 https://raw.githubusercontent.com/bibicadotnet/blocklist_minimal/main/blocklists.txt \
+https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt \
+https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts \
+https://raw.githubusercontent.com/abpvn/abpvn/refs/heads/master/filter/abpvn.txt \
 | extract_domains > "$BLOCK_TMP"
 
 echo "Downloading and processing allowlists..."
 curl -fsSL --max-time 60 \
 https://raw.githubusercontent.com/bibicadotnet/AdGuard-Home-blocklists/refs/heads/main/whitelist.txt \
+https://raw.githubusercontent.com/nextdns/click-tracking-domains/main/domains \
 | extract_domains > "$ALLOW_TMP"
 
 # Di chuyển file tmp vào thư mục đích
